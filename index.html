@@ -108,6 +108,21 @@
         font-size: 1rem;
       }
     }
+    .project-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2JEJ363X"></script>
@@ -155,25 +170,28 @@
       <li>Contract Negotiation</li>
       <li>Cross-functional Collaboration</li>
     </ul>
-  </section>
   <section id="projects">
-    <h2>Projects</h2>
-    <div>
-      <h3>Azteca Cooking Experience</h3>
-      <p>A full-stack Flask web app that allows users to book cooking classes, with MySQL database integration and Neo4j for relationship mapping. Deployed live on PythonAnywhere.</p>
-      <p><a href="https://azteca-hugocamachoromero1.pythonanywhere.com" target="_blank">Live App</a> | <a href="https://github.com/hugcamrom/azteca-cooking-experience" target="_blank">Source Code</a></p>
-    </div>
-    <div>
-      <h3>Shopping Tracker</h3>
-      <p>A CRUD-enabled item tracker using Flask and SQLite. Users can manage shops, categories, and items with Bootstrap styling. Includes full deployment and REST API routes.</p>
-      <p><a href="https://hugocamachoromero1.pythonanywhere.com/items" target="_blank">Live App</a> | <a href="https://github.com/hugcamrom/WSAA-project" target="_blank">Source Code</a></p>
-    </div>
-    <div>
-      <h3>Stock Market Visualisations</h3>
-      <p>Python-based data visualisation project using Jupyter Notebooks. Tracks and updates daily stock market data from external APIs. Features informative, custom plots and insights.</p>
-      <p><a href="https://github.com/hugcamrom/stocks" target="_blank">GitHub Repo</a></p>
-    </div>
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>Azteca Cooking Experience</h3>
+    <p>A full-stack Flask web app that allows users to book cooking classes, with MySQL database integration and Neo4j for relationship mapping. Deployed live on PythonAnywhere.</p>
+    <p><a href="https://azteca-hugocamachoromero1.pythonanywhere.com" target="_blank">Live App</a> | <a href="https://github.com/hugcamrom/azteca-cooking-experience" target="_blank">Source Code</a></p>
+  </div>
+
+  <div class="project-card">
+    <h3>Shopping Tracker</h3>
+    <p>A CRUD-enabled item tracker using Flask and SQLite. Users can manage shops, categories, and items with Bootstrap styling. Includes full deployment and REST API routes.</p>
+    <p><a href="https://hugocamachoromero1.pythonanywhere.com/items" target="_blank">Live App</a> | <a href="https://github.com/hugcamrom/WSAA-project" target="_blank">Source Code</a></p>
+  </div>
+
+  <div class="project-card">
+    <h3>Stock Market Visualisations</h3>
+    <p>Python-based data visualisation project using Jupyter Notebooks. Tracks and updates daily stock market data from external APIs. Features informative, custom plots and insights.</p>
+    <p><a href="https://github.com/hugcamrom/stocks" target="_blank">GitHub Repo</a></p>
+  </div>
   </section>
+
   <section id="education">
     <h2>Education</h2>
     <ul>
