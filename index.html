@@ -145,6 +145,50 @@
   color: #e0e0e0;
   border-left: 4px solid #80b3ff;
 }
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 3px solid #003366;
+}
+
+.timeline-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -0.6rem;
+  top: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+  background: #003366;
+  border-radius: 50%;
+}
+
+.timeline-year {
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-content {
+  margin-left: 1rem;
+}
+
+.dark-mode .timeline {
+  border-color: #80b3ff;
+}
+
+.dark-mode .timeline-item::before {
+  background: #80b3ff;
+}
+
+.dark-mode .timeline-year {
+  color: #80b3ff;
+}
 
   </style>
   <!-- Google Analytics -->
@@ -238,6 +282,31 @@
     <p><strong>— Industry Peer</strong></p>
   </div>
   </section>
+  <section id="timeline">
+  <h2>My Journey</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">1998</div>
+      <div class="timeline-content">Founded <strong>Azteca</strong> and ran it for 22 years — events, restaurant, and classes.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2020</div>
+      <div class="timeline-content">Paused business post-COVID. Pivoted towards digital and data-driven paths.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2021</div>
+      <div class="timeline-content">Joined <strong>PayPal</strong> — handling fraud, compliance, and customer success (EMEA).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2023</div>
+      <div class="timeline-content">Started <strong>Higher Diploma in Computing</strong> (Data Analytics), ATU.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-content">Launched projects on <strong>GitHub</strong> and <strong>PythonAnywhere</strong> — Azteca, Tracker, Stocks.</div>
+    </div>
+  </div>
+</section>
 
   <section id="education">
     <h2>Education</h2>
