@@ -4,217 +4,451 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Hugo Camacho Romero - GCCA Specialist, multilingual customer care professional, and data analytics graduate."
+  />
   <title>Hugo Camacho Romero | Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    :root {
+      --primary: #003366;
+      --primary-dark: #002244;
+      --accent: #0d6efd;
+      --bg: #f7f7f7;
+      --card: #ffffff;
+      --text: #333;
+      --muted: #666;
+      --border: #ddd;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f7f7f7;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
+
     header {
-      background: #003366;
+      background: linear-gradient(135deg, var(--primary), #004b8d);
       color: #fff;
-      padding: 2rem;
+      padding: 3rem 1.5rem;
       text-align: center;
     }
+
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       color: #ffffff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
     }
+
+    header p {
+      max-width: 850px;
+      margin: 0.5rem auto 0;
+      font-size: 1.05rem;
+    }
+
     nav {
-      background: #002244;
+      background: var(--primary-dark);
       padding: 1rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
     nav a {
       color: #fff;
-      margin: 0 1rem;
+      margin: 0 0.9rem;
       text-decoration: none;
+      font-weight: 500;
     }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     section {
-      padding: 2rem;
-      max-width: 900px;
+      padding: 2.5rem 1.5rem;
+      max-width: 1100px;
       margin: auto;
     }
-    h1, h2 {
-      color: #003366;
+
+    h1, h2, h3 {
+      color: var(--primary);
     }
-    footer {
-      background: #003366;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
     }
+
+    p, li {
+      font-size: 1rem;
+    }
+
     ul {
-      list-style-type: none;
-      padding: 0;
+      padding-left: 1.2rem;
     }
-    li {
-      margin: 0.5rem 0;
-    }
+
     a {
-      color: #003366;
+      color: var(--primary);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
-    .dark-mode {
-      background: #1a1a1a;
-      color: #f0f0f0;
-    }
-    .dark-mode header,
-    .dark-mode footer,
-    .dark-mode nav {
-      background: #111;
-      color: #f0f0f0;
-    }
-    .dark-mode nav a {
-      color: #f0f0f0;
-    }
-    .dark-mode .project-card {
-  background: #2a2a2a;
-  border: 1px solid #444;
-  color: #f0f0f0;
-}
 
-.dark-mode .project-card a {
-  color: #80b3ff;
-}
+    .section-intro {
+      color: var(--muted);
+      max-width: 800px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #fff;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+    }
 
     #modeToggle {
-      margin-top: 1rem;
-      padding: 0.4rem 0.8rem;
-      font-size: 0.9rem;
+      margin-top: 1.2rem;
+      padding: 0.55rem 1rem;
+      font-size: 0.95rem;
       background: #f0f0f0;
-      border: 1px solid #ccc;
+      border: none;
       color: #333;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 6px;
+      font-weight: 600;
     }
+
     #modeToggle:hover {
       background: #e0e0e0;
     }
+
+    .cta-banner {
+      text-align: center;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-button:hover {
+      background: #004b8d;
+      text-decoration: none;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .experience-grid,
+    .projects-grid,
+    .skills-grid,
+    .education-grid,
+    .contact-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .experience-grid,
+    .education-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skills-grid li {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      list-style: none;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    }
+
+    .project-top {
+      margin-bottom: 1rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.8rem 0 1rem;
+    }
+
+    .tag {
+      background: #eaf2ff;
+      color: var(--primary);
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .project-links a {
+      display: inline-block;
+      margin-right: 0.9rem;
+      margin-top: 0.35rem;
+      font-weight: 600;
+    }
+
+    .testimonial {
+      background: #f0f0f0;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary);
+      border-radius: 5px;
+      font-style: italic;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+      padding-left: 2rem;
+      border-left: 3px solid var(--primary);
+    }
+
+    .timeline-item {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -0.63rem;
+      top: 0.3rem;
+      width: 1rem;
+      height: 1rem;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .timeline-year {
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+      margin-left: 1.4rem;
+    }
+
+    .timeline-content {
+      margin-left: 1rem;
+    }
+
+    .lang-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .lang-item {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      width: 180px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    form {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-top: 0.35rem;
+    }
+
+    button[type="submit"] {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    button[type="submit"]:hover {
+      background: #004b8d;
+    }
+
+    .contact-links p {
+      margin: 0.6rem 0;
+    }
+
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+    }
+
+    .dark-mode {
+      --bg: #1a1a1a;
+      --card: #242424;
+      --text: #f0f0f0;
+      --muted: #c7c7c7;
+      --border: #444;
+      --primary: #80b3ff;
+      --primary-dark: #111;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .dark-mode header,
+    .dark-mode footer,
+    .dark-mode nav {
+      color: #f0f0f0;
+    }
+
+    .dark-mode nav a,
+    .dark-mode footer a {
+      color: #f0f0f0;
+    }
+
+    .dark-mode .project-card a,
+    .dark-mode a {
+      color: #9cc4ff;
+    }
+
+    .dark-mode .testimonial {
+      background: #2a2a2a;
+      color: #e0e0e0;
+      border-left: 4px solid #80b3ff;
+    }
+
+    .dark-mode .timeline {
+      border-color: #80b3ff;
+    }
+
+    .dark-mode .timeline-item::before {
+      background: #80b3ff;
+    }
+
+    .dark-mode .tag {
+      background: #16314f;
+      color: #cfe2ff;
+    }
+
+    .dark-mode input,
+    .dark-mode textarea {
+      background: #1f1f1f;
+      color: #f0f0f0;
+      border: 1px solid #555;
+    }
+
     @media (max-width: 768px) {
       header, nav, section, footer {
-        padding: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
+
       nav a {
-        display: block;
-        margin: 0.5rem 0;
+        display: inline-block;
+        margin: 0.35rem 0.5rem;
       }
-      h1 {
-        font-size: 1.5rem;
+
+      header h1 {
+        font-size: 1.9rem;
       }
+
       h2 {
-        font-size: 1.3rem;
+        font-size: 1.45rem;
       }
-      p, li {
-        font-size: 1rem;
+
+      .lang-item {
+        width: 100%;
+        max-width: 250px;
       }
     }
-    .project-card {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-.testimonial {
-  background: #f0f0f0;
-  padding: 1.2rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid #003366;
-  border-radius: 5px;
-  font-style: italic;
-}
-.dark-mode .testimonial {
-  background: #2a2a2a;
-  color: #e0e0e0;
-  border-left: 4px solid #80b3ff;
-}
-.timeline {
-  position: relative;
-  margin: 2rem 0;
-  padding-left: 2rem;
-  border-left: 3px solid #003366;
-}
-
-.timeline-item {
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -0.6rem;
-  top: 0.3rem;
-  width: 1rem;
-  height: 1rem;
-  background: #003366;
-  border-radius: 50%;
-}
-
-.timeline-year {
-  font-weight: bold;
-  color: #003366;
-  margin-bottom: 0.2rem;
-  margin-left: 1.4rem;
-}
-
-.timeline-content {
-  margin-left: 1rem;
-}
-
-.dark-mode .timeline {
-  border-color: #80b3ff;
-}
-
-.dark-mode .timeline-item::before {
-  background: #80b3ff;
-}
-
-.dark-mode .timeline-year {
-  color: #80b3ff;
-  margin-left: 1.4rem;
-}
-.lang-grid {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.lang-item {
-  background: #f0f0f0;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  width: 150px;
-  margin: 0.5rem;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-}
-
-.dark-mode .lang-item {
-  background: #2a2a2a;
-  color: #e0e0e0;
-  box-shadow: 1px 1px 5px rgba(255,255,255,0.1);
-}
-
   </style>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2JEJ363X"></script>
   <script>
@@ -227,167 +461,300 @@
 <body>
   <header>
     <h1>Hugo Camacho Romero</h1>
-    <p>Multilingual Fraud & Compliance Specialist | Customer-Centric Professional | Data Analytics Enthusiast</p>
+    <p>GCCA Specialist – Customer Care | Multilingual Customer Experience Professional | Fraud & Compliance Specialist | First Class Honours Computing Graduate</p>
+
+    <div class="hero-badges">
+      <span class="badge">Based in Dublin, Ireland</span>
+      <span class="badge">English, Spanish, French</span>
+      <span class="badge">First Class Honours</span>
+    </div>
+
     <button id="modeToggle">Toggle Dark Mode</button>
   </header>
+
   <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
+    <a href="#languages">Languages</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </nav>
+
   <section id="about">
     <h2>About Me</h2>
-    <p>With over 25 years of experience in customer service, including two decades managing my own business and four years focused on fraud prevention and compliance at PayPal, I bring a unique combination of hands-on experience and leadership. Currently working as a Customer Solutions Agent for the EMEA Spanish market, I specialise in limitations, fraud, credit, and dispute resolution. I am fluent in English, Spanish, and French and currently pursuing a Higher Diploma in Science in Computing (Data Analytics).</p>
+    <p>
+      With over 25 years of professional experience, including more than two decades managing my own business and several years in customer care, fraud, and compliance at PayPal, I bring a combination of leadership, adaptability, and people-focused service. I am multilingual in English, Spanish, and French, and I have recently completed a Higher Diploma in Science in Computing (Data Analytics) with <strong>First Class Honours</strong>.
+    </p>
+    <p>
+      As of <strong>April 6, 2026</strong>, I am starting a new role as <strong>GCCA Specialist – Customer Care</strong> at <strong>PayPal Europe Services Ltd.</strong> in Dublin. My background combines customer support excellence, operational problem-solving, compliance awareness, and a growing portfolio of practical technical projects in web development, databases, APIs, analytics, and data visualisation.
+    </p>
   </section>
-  <p style="text-align: center; margin-top: 1.5rem;">
-  <a href="https://youtu.be/_0GSN7J8wZU" target="_blank" style="display: inline-block; background: #003366; color: #fff; padding: 0.6rem 1.2rem; border-radius: 5px; text-decoration: none;">
-    🎥 Watch my open-water swim (3rd place)
-  </a>
-  </p>
+
+  <section class="cta-banner">
+    <a href="https://youtu.be/_0GSN7J8wZU" target="_blank" class="cta-button">
+      🎥 Watch my open-water swim (3rd place)
+    </a>
+  </section>
 
   <section id="experience">
     <h2>Experience</h2>
-    <h3>PayPal (2021 - Present)</h3>
-    <p>Customer Solutions Agent – Supporting the Spanish and Portuguese markets via phone and chat. Handling limitations, fraud, compliance, and disputes. Contributed to SPARK tool improvement.</p>
-    <h3>Azteca, Gracefair Ltd., Dublin (1998 – 2020)</h3>
-    <p>Managing Director/Owner – Founded and managed a successful hospitality and events business. Designed marketing strategies, managed legal compliance, and delivered cooking classes.</p>
-  </section>
-  <section id="languages">
-  <h2>Languages</h2>
-  <div class="lang-grid">
-    <div class="lang-item">
-      <img src="images/flags/flag-gb.png" alt="English" width="24"> <strong>English</strong><br>
-      Professional Fluency
-    </div>
-    <div class="lang-item">
-      <img src="images/flags/flag-es.png" alt="Spanish" width="24"> <strong>Spanish</strong><br>
-      Native Speaker
-    </div>
-    <div class="lang-item">
-      <img src="images/flags/flag-fr.png" alt="French" width="24"> <strong>French</strong><br>
-      Fluent
-    </div>
-    </div>
-   </section>
+    <p class="section-intro">A career built across customer service, entrepreneurship, operations, compliance, and digital project development.</p>
 
+    <div class="experience-grid">
+      <div class="card">
+        <h3>PayPal Europe Services Ltd., Dublin</h3>
+        <p><strong>GCCA Specialist – Customer Care</strong> | April 2026 – Present</p>
+        <p>
+          Beginning a new chapter focused on customer care excellence, problem resolution, and delivering high-quality support within a global organisation.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>PayPal</h3>
+        <p><strong>Customer Solutions Agent</strong> | 2021 – 2026</p>
+        <p>
+          Supported the Spanish and Portuguese markets via phone and chat, handling limitations, fraud, compliance, credit, and dispute resolution. Also contributed ideas and feedback to improve the internal SPARK tool.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Azteca, Gracefair Ltd., Dublin</h3>
+        <p><strong>Managing Director / Owner</strong> | 1998 – 2020</p>
+        <p>
+          Founded and managed a successful hospitality and events business for over 20 years. Led operations, marketing, legal compliance, customer experience, and the development of educational cooking classes and cultural events.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="languages">
+    <h2>Languages</h2>
+    <div class="lang-grid">
+      <div class="lang-item">
+        <img src="images/flags/flag-gb.png" alt="English" width="24"><br>
+        <strong>English</strong><br>
+        Professional Fluency
+      </div>
+      <div class="lang-item">
+        <img src="images/flags/flag-es.png" alt="Spanish" width="24"><br>
+        <strong>Spanish</strong><br>
+        Native Speaker
+      </div>
+      <div class="lang-item">
+        <img src="images/flags/flag-fr.png" alt="French" width="24"><br>
+        <strong>French</strong><br>
+        Fluent
+      </div>
+    </div>
+  </section>
 
   <section id="skills">
     <h2>Skills</h2>
-    <ul>
+    <ul class="skills-grid">
       <li>Fraud Prevention & Compliance</li>
-      <li>Customer Service & Retention</li>
-      <li>Project Management</li>
+      <li>Customer Care & Resolution</li>
+      <li>Multilingual Communication</li>
       <li>Business Development</li>
+      <li>Project Management</li>
       <li>Data Analytics</li>
-      <li>Multilingual Communication (EN, ES, FR)</li>
-      <li>Contract Negotiation</li>
+      <li>Python, Flask & APIs</li>
+      <li>MySQL, SQLite & Neo4j</li>
+      <li>Problem Solving & Process Improvement</li>
       <li>Cross-functional Collaboration</li>
     </ul>
+  </section>
+
   <section id="projects">
-  <h2>Projects</h2>
+    <h2>Projects</h2>
+    <p class="section-intro">
+      A selection of practical projects developed during my computing and data analytics journey, combining problem-solving, web technologies, databases, deployment, and visualisation.
+    </p>
 
-  <div class="project-card">
-    <h3>Azteca Cooking Experience</h3>
-    <p>A full-stack Flask web app that allows users to book cooking classes, with MySQL database integration and Neo4j for relationship mapping. Deployed live on PythonAnywhere.</p>
-    <p><a href="https://azteca-hugocamachoromero1.pythonanywhere.com" target="_blank">Live App</a> | <a href="https://github.com/hugcamrom/azteca-cooking-experience" target="_blank">Source Code</a></p>
-  </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-top">
+          <h3>Azteca Cooking Experience</h3>
+          <p>
+            A full-stack Flask web application for managing cooking class bookings, connected to MySQL and extended with Neo4j for relationship mapping. Deployed on PythonAnywhere.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Flask</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Neo4j</span>
+            <span class="tag">PythonAnywhere</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://azteca-hugocamachoromero1.pythonanywhere.com" target="_blank">Live App</a>
+          <a href="https://github.com/hugcamrom/azteca-cooking-experience" target="_blank">Source Code</a>
+        </div>
+      </div>
 
-  <div class="project-card">
-    <h3>Shopping Tracker</h3>
-    <p>A CRUD-enabled item tracker using Flask and SQLite. Users can manage shops, categories, and items with Bootstrap styling. Includes full deployment and REST API routes.</p>
-    <p><a href="https://hugocamachoromero1.pythonanywhere.com/items" target="_blank">Live App</a> | <a href="https://github.com/hugcamrom/WSAA-project" target="_blank">Source Code</a></p>
-  </div>
+      <div class="project-card">
+        <div class="project-top">
+          <h3>Shopping Tracker</h3>
+          <p>
+            A CRUD-based Flask application for managing items, categories, and shops, featuring a clean Bootstrap interface, database integration, and deployed REST functionality.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Flask</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">REST API</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://hugocamachoromero1.pythonanywhere.com/items" target="_blank">Live App</a>
+          <a href="https://github.com/hugcamrom/WSAA-project" target="_blank">Source Code</a>
+        </div>
+      </div>
 
-  <div class="project-card">
-    <h3>Stock Market Visualisations</h3>
-    <p>Python-based data visualisation project using Jupyter Notebooks. Tracks and updates daily stock market data from external APIs. Features informative, custom plots and insights.</p>
-    <p><a href="https://github.com/hugcamrom/stocks" target="_blank">GitHub Repo</a></p>
-  </div>
+      <div class="project-card">
+        <div class="project-top">
+          <h3>Stock Market Visualisations</h3>
+          <p>
+            A Python and Jupyter Notebook project that retrieves daily stock market data from external sources and presents it through informative charts, trends, and data analysis.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">Data Visualisation</span>
+            <span class="tag">APIs</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/hugcamrom/stocks" target="_blank">GitHub Repo</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <h3>Portfolio Website</h3>
+          <p>
+            My personal portfolio website built and maintained in HTML and CSS, hosted on GitHub Pages to showcase my experience, projects, technical growth, and professional profile.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">GitHub Pages</span>
+            <span class="tag">Responsive Design</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://hugcamrom.github.io/hugo-portfolio/" target="_blank">Live Site</a>
+          <a href="https://github.com/hugcamrom/hugo-portfolio" target="_blank">Source Code</a>
+        </div>
+      </div>
+    </div>
   </section>
+
   <section id="testimonials">
-  <h2>Testimonials</h2>
+    <h2>Testimonials</h2>
 
-  <div class="testimonial">
-    <p>"Hugo brings passion, professionalism, and creativity to every class he delivers. Our team loved the Azteca Cooking Experience!"</p>
-    <p><strong>— Corporate Client, Team Event</strong></p>
-  </div>
+    <div class="testimonial">
+      <p>"Hugo brings passion, professionalism, and creativity to every class he delivers. Our team loved the Azteca Cooking Experience!"</p>
+      <p><strong>— Corporate Client, Team Event</strong></p>
+    </div>
 
-  <div class="testimonial">
-    <p>"I’ve worked with Hugo on customer solutions at PayPal — he’s always reliable, supportive, and great with complex cases."</p>
-    <p><strong>— PayPal Teammate</strong></p>
-  </div>
+    <div class="testimonial">
+      <p>"I’ve worked with Hugo on customer solutions at PayPal — he’s always reliable, supportive, and great with complex cases."</p>
+      <p><strong>— PayPal Teammate</strong></p>
+    </div>
 
-  <div class="testimonial">
-    <p>"His leadership at Azteca for over 20 years speaks for itself. A natural communicator and mentor."</p>
-    <p><strong>— Industry Peer</strong></p>
-  </div>
+    <div class="testimonial">
+      <p>"His leadership at Azteca for over 20 years speaks for itself. A natural communicator and mentor."</p>
+      <p><strong>— Industry Peer</strong></p>
+    </div>
   </section>
+
   <section id="timeline">
-  <h2>My Journey</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-year">1998</div>
-      <div class="timeline-content">Founded <strong>Azteca</strong> and ran it for 22 years — events, restaurant, and classes.</div>
+    <h2>My Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1998</div>
+        <div class="timeline-content">Founded <strong>Azteca</strong> and developed it over more than two decades through hospitality, events, and cooking classes.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2020</div>
+        <div class="timeline-content">Paused business activity after COVID and began focusing more strongly on digital and data-driven career development.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2021</div>
+        <div class="timeline-content">Joined <strong>PayPal</strong>, supporting fraud, compliance, disputes, and customer solutions across EMEA markets.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-content">Started the <strong>Higher Diploma in Science in Computing (Data Analytics)</strong> at ATU.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-content">Built and published practical projects on <strong>GitHub</strong> and <strong>PythonAnywhere</strong>.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-content">Graduated with <strong>First Class Honours</strong> and started a new role as <strong>GCCA Specialist – Customer Care</strong> at PayPal Europe Services Ltd.</div>
+      </div>
     </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2020</div>
-      <div class="timeline-content">Paused business post-COVID. Pivoted towards digital and data-driven paths.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2021</div>
-      <div class="timeline-content">Joined <strong>PayPal</strong> — handling fraud, compliance, and customer success (EMEA).</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2023</div>
-      <div class="timeline-content">Started <strong>Higher Diploma in Computing</strong> (Data Analytics), ATU.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2025</div>
-      <div class="timeline-content">Launched projects on <strong>GitHub</strong> and <strong>PythonAnywhere</strong> — Azteca, Tracker, Stocks.</div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <section id="education">
     <h2>Education</h2>
-    <ul>
-      <li>Higher Diploma in Science in Computing (Data Analytics), ATU – Ongoing</li>
-      <li>Certificate in International Public Law, The Hague Academy of International Law</li>
-      <li>Cert. in Public Law & Intl. Organisations, Panthéon-Sorbonne</li>
-      <li>Bachelor's in Law, Universidad del Valle de México</li>
-    </ul>
+    <div class="education-grid">
+      <div class="card">
+        <ul>
+          <li><strong>Higher Diploma in Science in Computing (Data Analytics), ATU</strong> – <strong>First Class Honours</strong></li>
+          <li>Certificate in International Public Law, The Hague Academy of International Law</li>
+          <li>Certificate in Public Law & International Organisations, Panthéon-Sorbonne</li>
+          <li>Bachelor's in Law, Universidad del Valle de México</li>
+        </ul>
+      </div>
+    </div>
   </section>
+
   <section id="contact">
     <h2>Contact</h2>
-    <form action="https://formspree.io/f/xgvyypbv" method="POST">
-      <label for="name">Name:</label><br>
-      <input type="text" name="name" required><br><br>
-      <label for="email">Email:</label><br>
-      <input type="email" name="email" required><br><br>
-      <label for="message">Message:</label><br>
-      <textarea name="message" rows="5" required></textarea><br><br>
-      <button type="submit">Send</button>
-    </form>
-    <p>You can also reach me directly:</p>
-    <p>Email: <a href="mailto:hugo@romero.com">hugo@romero.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/hugo-c-romero-b9882b39/" target="_blank">View Profile</a></p>
-    <p>Location: Dublin 15, Ireland</p>
-    <p><a href="cv/hugo-cv.pdf" download>📄 Download My CV</a></p>
+
+    <div class="contact-grid">
+      <form action="https://formspree.io/f/xgvyypbv" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="email" style="margin-top: 1rem; display: block;">Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="message" style="margin-top: 1rem; display: block;">Message:</label>
+        <textarea name="message" rows="5" required></textarea>
+
+        <div style="margin-top: 1rem;">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+
+      <div class="card contact-links">
+        <p>You can also reach me directly:</p>
+        <p><strong>Email:</strong> <a href="mailto:hugo@romero.com">hugo@romero.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hugo-c-romero-b9882b39/" target="_blank">View Profile</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/hugcamrom" target="_blank">hugcamrom</a></p>
+        <p><strong>Location:</strong> Dublin 15, Ireland</p>
+        <p><a href="cv/hugo-cv.pdf" download><strong>📄 Download My CV</strong></a></p>
+      </div>
+    </div>
   </section>
+
   <footer>
-  <p>
-    <a href="https://www.linkedin.com/in/hugo-c-romero-b9882b39/" target="_blank" style="color: white; margin: 0 10px;">
-      <i class="fab fa-linkedin fa-lg"></i>
-    </a>
-    <a href="https://github.com/hugcamrom" target="_blank" style="color: white; margin: 0 10px;">
-      <i class="fab fa-github fa-lg"></i>
-    </a>
-  </p>
-  <p>&copy; 2026 Hugo Camacho Romero. All rights reserved.</p>
+    <p>
+      <a href="https://www.linkedin.com/in/hugo-c-romero-b9882b39/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </a>
+      <a href="https://github.com/hugcamrom" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github fa-lg"></i>
+      </a>
+    </p>
+    <p>&copy; 2026 Hugo Camacho Romero. All rights reserved.</p>
   </footer>
+
   <script>
     const toggleBtn = document.getElementById('modeToggle');
     toggleBtn.addEventListener('click', () => {
